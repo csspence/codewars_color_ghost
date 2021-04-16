@@ -9,6 +9,20 @@ ghost = new Ghost();
 ghost.color //=> "white" or "yellow" or "purple" or "red"
 */
 
-var Ghost = function() {
-  // your code goes here
-};
+
+
+class Ghost {
+  constructor() {
+    const colorMaker = () => {
+      let colors = ['white', 'yellow', 'purple', 'red'];
+      let index;
+      const getRandomArbitrary = (min, max) => {
+        return Math.random() * (max - min) + min;
+      }
+      index = getRandomArbitrary(0, 3);
+    
+      return colors[index];
+    };
+    this.color = colorMaker();
+  }
+}
